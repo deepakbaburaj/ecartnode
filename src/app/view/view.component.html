@@ -1,0 +1,171 @@
+
+<!-- <table>
+  <tr>
+    <th>Product</th>
+    <th>Company</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let p of products;let i=index">
+      <td>
+        <img width= 100 height=100 src="{{imagePath}}{{p.image}}">
+          {{p.name}}
+        </td>
+        <td>
+            {{p.company}}
+          </td>
+          <td>
+              {{p.price}}
+            </td>
+    <input type="submit" name="addtocart" value="Add To Cart" (click)="add(p)"/>
+  </tr>
+</table>
+<hr><hr> -->
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>Shirts<span>.</span></h2>
+                        <a href="#">Home</a>
+                        <a href="#">Dresses</a>
+                        <a class="active" href="#">Night Dresses</a>
+                    </div>
+                </div> -->
+                <div class="col-lg-8">
+                    <img src="assets/img/add.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Product Page Section Beign -->
+    <section class="product-page">
+        <div class="container">
+            <div class="product-control">
+                <a href="#">Previous</a>
+                <a href="#">Next</a>
+            </div>
+            <div *ngFor="let p of products;let i=index" class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <div class="product-img">
+                            <figure>
+                                <img src="{{imagePath}}{{p.image}}" alt="">
+                                <div class="p-status">new</div>
+                            </figure>
+                        </div>
+                        <!-- <div class="product-img">
+                            <figure>
+                                <img src="../../assets/img/product/product-1.jpg" alt="">
+                                <div class="p-status">new</div>
+                            </figure>
+                        </div> -->
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-content">
+                        <h2>{{p.name}}</h2>
+                        <div class="pc-meta">
+                            <h5>{{p.price}}</h5>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p> {{p.company}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <ul class="tags">
+                            <li><span>Category :</span> Men’s Wear</li>
+                            <li><span>Tags :</span> man, shirt, dotted, elegant, cool</li>
+                        </ul>
+                        <div class="product-quantity">
+                            <div class="pro-qty"><button class="dec qtybtn" (click)="decQuantity()">-</button>
+                                {{qty}}
+                            <button class="inc qtybtn" (click)="addQuantity()">+</button></div>
+                        </div>
+                        <a class="primary-btn pc-btn"><input type="submit" name="addtocart" value="Add To Cart" (click)="add(p)"/></a>
+                        <ul class="p-info">
+                            <li>Product Information</li>
+                            <li>Reviews</li>
+                            <li>Product Care</li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Product Page Section End -->
+
+    <!-- Related Product Section Begin -->
+    <section class="related-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>Related Products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="#"><img src="../../assets/img/products/img-1.jpg" alt=""></a>
+                            <div class="p-status">new</div>
+                        </figure>
+                        <div class="product-text">
+                            <h6>Green Dress with details</h6>
+                            <p>$22.90</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="#"><img src="../../assets/img/products/img-2.jpg" alt=""></a>
+                            <div class="p-status sale">sale</div>
+                        </figure>
+                        <div class="product-text">
+                            <h6>Yellow Maxi Dress</h6>
+                            <p>$25.90</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="#"><img src="../../assets/img/products/img-3.jpg" alt=""></a>
+                            <div class="p-status">new</div>
+                        </figure>
+                        <div class="product-text">
+                            <h6>One piece bodysuit</h6>
+                            <p>$19.90</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="#"><img src="../../assets/img/products/img-4.jpg" alt=""></a>
+                            <div class="p-status popular">popular</div>
+                        </figure>
+                        <div class="product-text">
+                            <h6>Blue Dress with details</h6>
+                            <p>$35.50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->

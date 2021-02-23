@@ -1,0 +1,81 @@
+
+
+<!-- <h3>Add new product</h3>
+<div>
+  <table>
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td>Product</td>
+        <td><input type="text" name="nProduct" [(ngModel)]="nProduct" ></td>
+      </tr>
+      <tr>
+        <td>Company</td>
+        <td><input type="text" name="nCompany" [(ngModel)]="nCompany"></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td><input type="number" name="nPrice" [(ngModel)]="nPrice"></td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td><input type="file" name="imageFile" (change)="onFileSelect($event)" /></td>
+      </tr> 
+      <tr>
+        <td></td>
+        <td><button (click)="addProduct()">Add Product</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5>{{message.msg}}</h5>
+</div>-->
+<body> 
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Add new product
+					</span>
+				</div>
+
+				<form class="login100-form validate-form" method="POST" action="/view">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Product</span>
+						<input type="text" name="nProduct" [(ngModel)]="nProduct" class="input100" placeholder="Enter Product">
+						<span class="focus-input100"></span>
+					</div>
+
+          
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Company</span>
+						<input type="text" name="nCompany" [(ngModel)]="nCompany" class="input100" placeholder="Enter Company">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Price</span>
+						<input type="number" name="nPrice" [(ngModel)]="nPrice" class="input100" placeholder="Enter Price">
+						<span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Image</span>
+						<input type="file" name="imageFile" (change)="onFileSelect($event)" class="input100">
+						<span class="focus-input100"></span>
+          </div>
+          
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn"(click)="addProduct()">
+						Add Product
+						</button>
+					</div>
+				</form> 
+			</div>
+		</div>
+	</div>
+	
+
+
+</body>

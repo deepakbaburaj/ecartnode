@@ -1,0 +1,73 @@
+<!-- <table *ngIf="product.length">
+    <tr>
+      <td>product</td>
+      <td>company</td>
+      <td>price</td>
+    </tr>
+    <tr *ngFor="let i of product;let j=index">
+      <td>
+        {{i.name}}
+      </td>
+      <td>
+          {{i.company}}
+        </td>
+        <td>
+            {{i.price}}
+          </td>
+          <td>
+            <input type="button" value="Delete" (click)="Delete(i.name,j)">
+          </td>
+            
+         
+    </tr>
+    </table>
+    <p>{{message.msg}}</p> -->
+
+    <div *ngIf="product.length" class="container">
+      <div class="cart-table">
+          <table>
+              <thead>
+                  <tr>
+                      <th class="product-h">Product</th>
+                      <th>Company</th>
+                      <th>Price</th>
+                      <th class="quan">Quantity</th>
+                      <th>Total</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let i of product;let j=index">
+                      <td class="product-col">
+                          <img src="{{imagePath}}{{i.image}}" alt="">
+                          <div class="p-title">
+                              <h5>{{i.name}}</h5>
+                          </div>
+                      </td>
+                      <td class="company-col">{{i.company}}</td>
+                      <td class="price-col">{{i.price}}</td>
+                      <td class="quantity-col">
+                          <div class="pro-qty">
+                              <input type="text" value="1">
+                          </div>
+                      </td>
+                      <td class="total"></td>
+                      <td class="product-close"><input type="button" value="Delete" (click)="Delete(i.name,j)"/></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="cart-btn">
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="coupon-input">
+                      <input type="text" placeholder="Enter cupone code">
+                  </div>
+              </div>
+              <div class="col-lg-5 offset-lg-1 text-left text-lg-right">
+                  <div class="site-btn clear-btn">Clear Cart</div>
+                  <div class="site-btn update-btn">Update Cart</div>
+              </div>
+          </div>
+      </div>
+  </div>

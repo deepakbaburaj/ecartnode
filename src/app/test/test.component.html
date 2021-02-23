@@ -1,0 +1,47 @@
+<p>
+  test works!
+</p>
+<hr>
+<table *ngIf="show">
+  <tr>
+    <td>Product</td><td>{{tname}}</td>
+  </tr>
+  <tr>
+    <td>Company</td><td><input type="text" name="tcompany" [(ngModel)]="tcompany"></td>
+  </tr>
+  <tr>
+    <td>Price</td><td><input type="text" name="tprice"  [(ngModel)]="tprice"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="Update" (click)="Update()"></td>
+  </tr>
+</table>
+<hr>
+<input type="button" value="get data from server" (click)="connect()">
+<table *ngIf="product.length">
+  <tr>
+    <td>product</td>
+    <td>company</td>
+    <td>price</td>
+  </tr>
+  <tr *ngFor="let i of product;let j=index">
+    <td>
+      {{i.name}}
+    </td>
+    <td>
+        {{i.company}}
+      </td>
+      <td>
+          {{i.price}}
+        </td>
+        <td>
+          <input type="button" value="Delete" (click)="Delete(i.name,j)">
+        </td>
+        <td>
+          <input type="button" value="Edit" (click)="Edit(i)">
+        </td>
+          
+       
+  </tr>
+  </table>
+  <p>{{message.msg}}</p>

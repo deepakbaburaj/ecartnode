@@ -1,0 +1,134 @@
+<!-- <table *ngIf="show">
+    <tr>
+      <td>Product</td><td>{{tname}}</td>
+    </tr>
+    <tr>
+      <td>Company</td><td><input type="text" name="tcompany" [(ngModel)]="tcompany"></td>
+    </tr>
+    <tr>
+      <td>Price</td><td><input type="text" name="tprice"  [(ngModel)]="tprice"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="Update" (click)="Update()"></td>
+    </tr>
+  </table>
+  <hr>
+  <table *ngIf="product.length">
+    <tr>
+      <td>product</td>
+      <td>company</td>
+      <td>price</td>
+    </tr>
+    <tr *ngFor="let i of product;let j=index">
+      <td>
+        {{i.name}}
+      </td>
+      <td>
+          {{i.company}}
+        </td>
+        <td>
+            {{i.price}}
+          </td>
+          <td>
+            <input type="button" value="Edit" (click)="Edit(i)">
+          </td>
+            
+         
+    </tr>
+    </table>
+    <p>{{message.msg}}</p> -->
+
+    <div *ngIf="!show" class="container">
+      <div class="cart-table">
+          <table *ngIf="product.length">
+              <thead>
+                  <tr>
+                      <th class="product-h">Product</th>
+                      <th>Company</th>
+                      <th>Price</th>
+                      <th class="quan">Quantity</th>
+                      <th>Total</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let i of product;let j=index">
+                      <td class="product-col">
+                          <img src="{{imagePath}}{{i.image}}" alt="">
+                          <div class="p-title">
+                              <h5>{{i.name}}</h5>
+                          </div>
+                      </td>
+                      <td class="company-col">{{i.company}}</td>
+                      <td class="price-col">{{i.price}}</td>
+                      <td class="quantity-col">
+                          <div class="pro-qty">
+                              <input type="text" value="1">
+                          </div>
+                      </td>
+                      <td class="total"></td>
+                      <td class="product-close"><input type="button" value="Edit" (click)="Edit(i)"></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="cart-btn">
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="coupon-input">
+                      <input type="text" placeholder="Enter cupone code">
+                  </div>
+              </div>
+              <div class="col-lg-5 offset-lg-1 text-left text-lg-right">
+                  <div class="site-btn clear-btn">Clear Cart</div>
+                  <div class="site-btn update-btn">Update Cart</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <body> 
+	
+    <div *ngIf="show" class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+            <span class="login100-form-title-1">
+              Update product
+            </span>
+          </div>
+  
+          <form class="login100-form validate-form" method="POST" action="/view">
+            <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+              <span class="label-input100">Product</span>
+              {{tname}}
+              <span class="focus-input100"></span>
+            </div>
+  
+            
+            <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+              <span class="label-input100">Company</span>
+              <input type="text" name="tcompany" [(ngModel)]="tcompany" class="input100">
+              <span class="focus-input100"></span>
+            </div>
+  
+            <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+              <span class="label-input100">Price</span>
+              <input type="number" name="tprice" [(ngModel)]="tprice" class="input100">
+              <span class="focus-input100"></span>
+            </div>
+            
+    
+            
+            <div class="container-login100-form-btn">
+              <button type="submit" class="login100-form-btn"(click)="Update()">
+              Update
+              </button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    </div>
+    
+  
+  
+  </body>

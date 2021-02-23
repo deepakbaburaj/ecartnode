@@ -1,0 +1,57 @@
+<!-- <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Our Stores</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/home">Home</a></li>
+        <li *ngIf="show"><a routerLink="/new">New Products</a></li>
+        <li *ngIf="val"><a routerLink="/view">View Products</a></li>
+        <li *ngIf="show"><a routerLink="/edit">Edit Products</a></li>
+        <li *ngIf="show"><a routerLink="/del">Delete Products</a></li>
+        <li *ngIf="val"><a routerLink="/cart">Cart</a></li>
+        <li *ngIf="val"><a routerLink="/login" (click)="logout()">Logout</a></li>
+        <li *ngIf="!val"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!val"><a routerLink="/register">Register</a></li>
+      </ul>
+    </div>
+  </nav> -->
+  <header class="header-section">
+    <div class="container-fluid">
+        <div class="inner-header">
+            <div class="logo">
+                <a href="./index.html"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <div class="header-right">
+                <img src="assets/img/icons/search.png" alt="" class="search-trigger">
+                <img src="assets/img/icons/man.png" alt="">
+                <a *ngIf="val" routerLink="/home/cart">
+                    <img src="assets/img/icons/bag.png" alt="">
+                    <span>{{cartCount}}</span>
+                </a>
+            </div>
+            <div class="user-access">
+                <a *ngIf="!val" routerLink="/register">Register</a>
+                <a *ngIf="!val" routerLink="/login" class="in">Sign in</a>
+                <a *ngIf="val" routerLink="/login" (click)="logout()">Logout</a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a class="active" routerLink="/home">Home</a></li>
+                    <li><a href="#">Shop</a>
+                        <ul class="sub-menu">
+                          <li *ngIf="!show"><a routerLink="/home/view">Product Page</a></li>
+                          <li *ngIf="!show"><a routerLink="/home/cart">Shopping Cart</a></li>
+                          <li *ngIf="!show"><a routerLink="/home/checkout">Check out</a></li>
+                        </ul>
+                    </li>
+                    <li><a *ngIf="show">Admin Tools</a>
+                      <ul *ngIf="show" class="sub-menu">
+                        <li><a routerLink="/home/new">Add New Products</a></li>
+                        <li><a routerLink="/home/edit">Edit Products</a></li>
+                        <li><a routerLink="/home/del">Delete Products</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
